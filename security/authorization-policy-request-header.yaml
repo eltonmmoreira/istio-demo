@@ -1,0 +1,17 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: deny-method-get
+  namespace: bookinfo
+spec:
+  selector:
+    matchLabels:
+      app: productpage
+  action: DENY
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]
+    when:
+    - key: request.headers[x-token]
+      notValues: ["admin"]

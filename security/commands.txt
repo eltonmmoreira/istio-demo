@@ -1,0 +1,5 @@
+ //ok
+ while curl -X GET -H "x-token: admin" -sI -o /dev/null -w "%{http_code}\n" https://istio.fluytcloud.com/productpage; do; done;
+
+ //error
+ while curl -X GET -H "x-token: teste" -sI -o /dev/null -w "%{http_code}\n" https://istio.fluytcloud.com/productpage; do; done;

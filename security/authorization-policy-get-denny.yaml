@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy"
+metadata:
+  name: denny-details-get
+  namespace: bookinfo
+spec:
+  selector:
+    matchLabels:
+      app: details
+  action: DENY
+  rules:
+  - to:
+    - operation:
+        methods: [ "GET" ]

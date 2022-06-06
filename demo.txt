@@ -1,0 +1,12 @@
+app -> Versão inicial do app com apenas a V1 de review, sem mostrar as estrelas;
+
+app-review-versions -> Adiciona v2 e v3 com estrelas de review;
+
+header routing -> Roteia requisições com base browser firefox para versão 2 do reviews, routing header, test A/B
+
+canary-deploy -> Roteia as requisições por traffic weight. Canary Deploy;
+
+sercurity -> Authorization pollicy:
+    Traffic denny no namespace bookinfo;
+    Traffic denny no namespace bookinfo método get service details;
+    Traffic denny no namespace bookinfo header validation productpage service;

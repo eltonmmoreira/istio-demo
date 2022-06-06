@@ -1,0 +1,1 @@
+while curl -sI -o /dev/null -w "%{http_code}\n" https://istio.fluytcloud.com/productpage; do; done;
