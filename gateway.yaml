@@ -23,5 +23,14 @@ spec:
       mode: SIMPLE
       credentialName: ingress-cert # This should match the Certificate secretName   
     hosts:
-    - "*.fluytcloud.com"
+    - "istio.fluytcloud.com"
+  - port:
+      number: 443
+      name: https-site
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: ingress-cert-site # This should match the Certificate secretName
+    hosts:
+      - "fluytcloud.com"
 ---
