@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: keycloak-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "keycloak.fluytcloud.com"
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: ingress-keycloak-cert # This should match the Certificate secretName
+    hosts:
+      - "keycloak.fluytcloud.com"
+---

@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ingress-keycloak-cert
+  namespace: istio-system
+spec:
+  secretName: ingress-keycloak-cert
+  issuerRef:
+    name: keycloak-letsencrypt
+    kind: ClusterIssuer
+  commonName: keycloak.fluytcloud.com
+  dnsNames:
+    - keycloak.fluytcloud.com
