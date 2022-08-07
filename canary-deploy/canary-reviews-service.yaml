@@ -11,11 +11,11 @@ spec:
         - destination:
             host: reviews.bookinfo.svc.cluster.local
             subset: v1
-          weight: 0
+          weight: 50
         - destination:
             host: reviews.bookinfo.svc.cluster.local
             subset: v3
-          weight: 100
+          weight: 50
 
 
 
